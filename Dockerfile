@@ -10,10 +10,9 @@ WORKDIR /
 RUN python3 -m pip install --upgrade pip
 RUN pip install flask
 RUN python3 -m venv venv
-RUN pip freeze
-RUN source venv/bin/activate
 
-COPY ./app /
+RUN mkdir app
+COPY ./app app
 
 ENTRYPOINT [ "python3" ]
 
