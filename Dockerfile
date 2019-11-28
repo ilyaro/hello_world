@@ -9,7 +9,6 @@ RUN yum localinstall -y stress-1.0.2-1.el7.rf.x86_64.rpm
 WORKDIR /
 RUN python3 -m pip install --upgrade pip
 RUN pip install flask
-RUN python3 -m venv venv
 
 RUN mkdir app
 COPY ./app app
