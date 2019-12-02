@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                       docker rmi $(docker build gfish/hello_world:${env.BUILD_ID}) || true
+                       /usr/bin/docker build gfish/hello_world:${env.BUILD_ID}
                     '''
                 }
             }
