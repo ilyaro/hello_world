@@ -16,6 +16,16 @@ pipeline {
             steps {
                 script {
                     sh """
+                       cat /etc/*release*
+                       ##/usr/bin/docker build gfish/hello_world:${env.BUILD_ID}
+                    """
+                }
+            }
+        }
+        stage("Build image") {
+            steps {
+                script {
+                    sh """
                        /usr/bin/docker build gfish/hello_world:${env.BUILD_ID}
                     """
                 }
