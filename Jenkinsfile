@@ -17,7 +17,8 @@ pipeline {
                 script {
                     sh """
                        cat /etc/*release*
-                       apt install docker-ce
+                       which docker
+                       #apt install docker-ce
                        ##/usr/bin/docker build gfish/hello_world:${env.BUILD_ID}
                     """
                 }
