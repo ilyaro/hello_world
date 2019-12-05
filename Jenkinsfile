@@ -1,15 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'docker:latest'
+        }
+    }
     environment {
         PROJECT_ID = 'western-cirrus-260108'
         CLUSTER_NAME = 'standard-cluster-1'
         LOCATION = 'us-central1-a'
         CREDENTIALS_ID = 'gke'
-    }
-    agent {
-        docker {
-            image 'docker:latest'
-        }
     }
     stages {
         stage("Checkout code") {
