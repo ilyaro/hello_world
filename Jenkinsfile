@@ -6,6 +6,11 @@ pipeline {
         LOCATION = 'us-central1-a'
         CREDENTIALS_ID = 'gke'
     }
+    agent {
+        docker {
+            image 'docker:latest'
+        }
+    }
     stages {
         stage("Checkout code") {
             steps {
